@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y lsb-release gnupg2 apt-utils wget
 RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN apt-get update
-RUN apt-get -y install postgresql-client-10 perl barman-cli awscli gosu
+RUN apt-get -y install postgresql-client-10 perl barman-cli awscli gosu nano
 RUN apt-get clean all
 
 RUN mkdir -p /var/lib/postgresql/data
