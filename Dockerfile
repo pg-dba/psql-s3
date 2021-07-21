@@ -8,7 +8,9 @@ RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-k
 RUN apt-get update
 RUN apt-get -y install postgresql-client-10 perl barman-cli awscli gosu nano
 RUN apt-get clean all
-RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -o /usr/bin/mc
+RUN wget --quiet https://dl.min.io/client/mc/release/linux-amd64/mc
+RUN chmod 700 mc
+RUN mv mc /usr/bin/
 
 RUN mkdir -p /var/lib/postgresql/data
 
