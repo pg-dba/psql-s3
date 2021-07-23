@@ -8,17 +8,7 @@ mc config --quiet host add ${AWS_PROFILE_MINIO} ${MINIO_ENDPOINT_URL} ${AWS_ACCE
 #cat /var/lib/postgresql/.aws/credentials 
 
 echo "echo ''" >> /root/.bashrc
-echo "RED='\033[0;31m'" >> /root/.bashrc
-echo "YELLOW='\033[1;33m'" >> /root/.bashrc
-echo "NC='\033[0m'" >> /root/.bashrc
-
-echo 'echo -e "${RED}postgres container must be stopped.${NC}"' >> /root/.bashrc
-echo "echo ''" >> /root/.bashrc
-echo 'echo -e "${YELLOW}restore example:${NC}"' >> /root/.bashrc
-echo 'echo -e "\n${YELLOW}./list-backups.sh${NC}"' >> /root/.bashrc
-echo 'echo -e "${YELLOW}./list-backups.sh private-postgres-1${NC}"' >> /root/.bashrc
-echo 'echo -e "\n${YELLOW}./restore.sh private-postgres-1 20210715T095028${NC}"' >> /root/.bashrc
-echo 'echo -e "\n${YELLOW}./restore.sh private-postgres-1 20210715T095028 DATETIME${NC}"' >> /root/.bashrc
+echo "source /root/help-restore.sh" >> /root/.bashrc
 echo "echo ''" >> /root/.bashrc
 
 "$@"

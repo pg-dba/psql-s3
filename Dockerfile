@@ -19,6 +19,9 @@ VOLUME /var/lib/postgresql/data
 COPY s3-entrypoint.sh /s3-entrypoint.sh
 RUN chmod 700 /s3-entrypoint.sh
 
+COPY help-restore.sh /root/help-restore.sh
+RUN chmod 700 /root/help-restore.sh
+
 COPY list-backups.sh /root/list-backups.sh
 RUN chmod 700 /root/list-backups.sh
 
