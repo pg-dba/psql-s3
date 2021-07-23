@@ -48,9 +48,9 @@ chown 999:999 /var/lib/postgresql/data/backup_label
 echo -e "\n${YELLOW}completed:${NC}"
 ls -la /var/lib/postgresql/data/
 
-echo -e "\n${YELLOW}You can start the container. And control:${NC}"
+echo -e "\n${RED}You must start the container. And control:${NC}"
 echo 'cat $(ls -tr /var/lib/postgresql/data/log/*.csv | tail -n1) | grep "archive recovery complete\|database system is ready to accept connections" | tail -n2'
-echo -e "\n${YELLOW}Then run:${NC}"
+echo -e "\n${RED}Then run:${NC}"
 echo 'sed -i "s/ARCHIVE=0/ARCHIVE=1/" /var/lib/postgresql/data/archive_wal.sh'
 echo -e '\n'
 
