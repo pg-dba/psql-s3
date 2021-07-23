@@ -15,8 +15,10 @@ echo "NC='\033[0m'" >> /root/.bashrc
 echo 'echo -e "${RED}postgres container must be stopped.${NC}"' >> /root/.bashrc
 echo "echo ''" >> /root/.bashrc
 echo 'echo -e "${YELLOW}restore example:${NC}"' >> /root/.bashrc
+echo 'echo -e "\n${YELLOW}./list-backups.sh${NC}"' >> /root/.bashrc
 echo 'echo -e "${YELLOW}./list-backups.sh private-postgres-1${NC}"' >> /root/.bashrc
-echo 'echo -e "${YELLOW}./restore.sh private-postgres-1 20210715T095028${NC}"' >> /root/.bashrc
+echo 'echo -e "\n${YELLOW}./restore.sh private-postgres-1 20210715T095028${NC}"' >> /root/.bashrc
+echo 'echo -e "\n${YELLOW}./restore.sh private-postgres-1 20210715T095028 DATETIME${NC}"' >> /root/.bashrc
 echo "echo ''" >> /root/.bashrc
 
 "$@"
