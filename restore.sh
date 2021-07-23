@@ -37,6 +37,8 @@ if [[ -z "$3" ]]; then
 echo "recovery_target_timeline = 'latest'" >> /var/lib/postgresql/data/recovery.conf
 else
 echo "recovery_target_time = '$3'" >> /var/lib/postgresql/data/recovery.conf
+echo "recovery_target_action = 'promote'" >> /var/lib/postgresql/data/recovery.conf
+
 fi
 
 chown 999:999 /var/lib/postgresql/data/recovery.conf
