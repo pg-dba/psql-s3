@@ -11,7 +11,7 @@ mc ls ${AWS_PROFILE_MINIO}/backups
 
 else
 
-echo -e "${YELLOW}full backup list:${NC}"
+echo -e "${YELLOW}full backup list for $1:${NC}"
 
 barman-cloud-backup-list -P ${AWS_PROFILE_MINIO} --endpoint-url ${MINIO_ENDPOINT_URL} s3://backups $1
 
