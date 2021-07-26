@@ -29,7 +29,7 @@ echo -e "\n${YELLOW}disable archiving at time restoring WAL${NC}"
 sed -i 's/DEBUG=1/DEBUG=0/' /var/lib/postgresql/data/archive_wal.sh 
 sed -i 's/LOG=1/LOG=0/' /var/lib/postgresql/data/archive_wal.sh 
 sed -i 's/ARCHIVE=1/ARCHIVE=0/' /var/lib/postgresql/data/archive_wal.sh 
-cat /var/lib/postgresql/data/archive_wal.sh | grep "DEBUG=\|LOG=\|ARCHIVE="
+cat /var/lib/postgresql/data/archive_wal.sh | grep -v -P '^\s*(#|;|$)' | grep "DEBUG=\|LOG=\|ARCHIVE="
 
 echo -e "\n${YELLOW}command for restoring WAL${NC}"
 echo "restore_command = 'barman-cloud-wal-restore -P ${AWS_PROFILE_MINIO} --endpoint-url ${MINIO_ENDPOINT_URL} s3://backups $1 %f %p'" > /var/lib/postgresql/data/recovery.conf
