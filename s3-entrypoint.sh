@@ -19,6 +19,13 @@ echo "IF YOU WANT TO USE minio, THAT YOU MUST DEFINE ENVIRONMENT."
 
 fi
 
+if [[ "$(cat /etc/passwd | grep ^postgres: | wc -l)" == "0" ]] then;
+groupadd -g 999 postgres
+useradd -u 999 -g 999 postgres -d /var/lib/postgresql -s /bin/bash
+fi
+
+if [[ "$(cat /etc/resolv.conf | grep '169.254.169.250' | wc -l)" == "0" ]]; then
 echo "nameserver 169.254.169.250" > /etc/resolv.conf
+fi
 
 "$@"
