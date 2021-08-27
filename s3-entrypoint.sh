@@ -19,7 +19,7 @@ echo "IF YOU WANT TO USE minio, THAT YOU MUST DEFINE ENVIRONMENT."
 
 fi
 
-if [[ "$(cat /etc/passwd | grep ^postgres: | wc -l)" == "0" ]] then;
+if [[ "$(cat /etc/passwd | grep ^postgres: | wc -l)" == "0" ]]; then
 groupadd -g 999 postgres
 useradd -u 999 -g 999 postgres -d /var/lib/postgresql -s /bin/bash
 fi
