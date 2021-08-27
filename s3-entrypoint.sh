@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ ! -z ${var+x} ]]; then
+if [[ ! -z ${AWS_PROFILE_MINIO+x} ]]; then 
 
 aws configure --profile ${AWS_PROFILE_MINIO:-minio} set aws_access_key_id "${AWS_ACCESS_KEY_ID}"
 aws configure --profile ${AWS_PROFILE_MINIO:-minio} set aws_secret_access_key "${AWS_SECRET_ACCESS_KEY}"
