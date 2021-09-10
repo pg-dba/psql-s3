@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y lsb-release gnupg2 apt-utils wget
 RUN sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN apt-get update
-RUN apt-get -y install postgresql-client-10 perl barman-cli awscli gosu nano iputils-ping
+RUN apt-get -y install postgresql-client-10 perl barman-cli awscli gosu nano mutt iputils-ping
 RUN apt-get clean all
 RUN wget --quiet https://dl.min.io/client/mc/release/linux-amd64/mc
 RUN chmod 700 mc
