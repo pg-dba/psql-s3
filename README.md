@@ -3,8 +3,8 @@
 <B>version:</B><BR>
 <BR>
 psql 10.17<BR>
-barman-cli 2.12<BR>
-awscli 1.18<BR>
+barman-cli 2.15<BR>
+awscli 1.19<BR>
 mc RELEASE.2021-06-13T17-48-22Z
 <BR><BR>
 <B>examples:</B><BR>
