@@ -44,6 +44,8 @@ fi
 chown 999:999 /var/lib/postgresql/data/recovery.conf
 cat /var/lib/postgresql/data/recovery.conf
 chown 999:999 /var/lib/postgresql/data/backup_label
+# chown -R 999:999 /var/lib/postgresql/data/*
+# find /var/lib/postgresql/data/* \( ! -user 999 -or ! -group 999 \) -exec chown 999:999 {} \;
 
 echo -e "\n${YELLOW}completed:${NC}"
 ls -la /var/lib/postgresql/data/
