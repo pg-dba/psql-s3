@@ -2,10 +2,10 @@
 
 <B>version:</B><BR>
 <BR>
-psql 10.17<BR>
-barman-cli 2.15<BR>
-awscli 1.19<BR>
-mc RELEASE.2021-06-13T17-48-22Z
+psql 10.19<BR>
+barman-cli 2.17<BR>
+awscli 1.18<BR>
+mc RELEASE.2021-12-16T23-38-39Z
 <BR><BR>
 <B>examples:</B><BR>
 <BR>
